@@ -8,28 +8,43 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    var fruit = Fruit.data
     var body: some View {
-        ZStack{
-            VStack{
-                Text("樣品名稱: 木瓜平均值")
-                Text("熱量(kcal): 38")
-                Text("熱量(kcal): 38")
-                Text("水分(g): 89.1")
-                Text("粗蛋白(g): 0.6")
-                Text("粗脂肪(g): 0.1")
-                Text("飽和脂肪(g):")
-                Text("總碳水化合物(g): 9.9")
-                Text("膳食纖維(g): 1.4")
-            }.opacity(10)
-            .scaleEffect(1.5)
+        NavigationView{
+            List(fruit, id:\.name){
+                element in
+                NavigationLink(destination:
+                                VStack{
+                                    Text("以下為每公克食物計算")
+                                        .font(.largeTitle)
+                                        .padding(10)
+                                    Button(action:{
+                                        
+                                    },label:{
+                                        
+                                    })
+
+                                    Text("熱量(kcal):\(element.calorie)")
+                                    Text("水分(g):\(element.water)")
+                                    Text("脂肪(g):\(element.fat)")
+                                    Text("飽和脂肪(g):\(element.saturatedFat)")
+                                    Text("蛋白質(g):\(element.protein)")
+                            
+                                    Text("總碳水化合物(g):\(element.carbohydrates)")
+                                    Text("膳食纖維(g):\(element.dietaryFiber)")
+                                }
+                )
+                {
+                    Text(element.name)
+                }
+                
+            }.contentShape(Rectangle())
+            .navigationBarTitle(Text("營養成分"))
             
-         
-            Image("背景1")
-                .opacity(0.2)
-                .scaleEffect(1.5)
         }
-       
     }
+    
 }
 
 struct SearchView_Previews: PreviewProvider {

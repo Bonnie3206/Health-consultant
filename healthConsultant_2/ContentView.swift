@@ -15,6 +15,13 @@ func loadData(){
     }
 struct ContentView: View {
     @State var SearchPage = false
+    /*var fruit = Fruit.data
+    var body: some View {
+        List(fruit, id:\.name){
+            element in
+            Text(element.name)
+        }*/
+        
     var body: some View {
         ZStack{
             Image("背景3")
@@ -48,7 +55,7 @@ struct ContentView: View {
                 }
         }
         }
-        
+       
     }
 }
 
