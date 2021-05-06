@@ -1,12 +1,11 @@
 //
-//  test.swift
+//  SearchBar.swift
 //  healthConsultant_2
 //
 //  Created by CK on 2021/5/6.
 //
-/*
-import SwiftUI
 
+import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     @State private var isEditing = false
@@ -51,34 +50,10 @@ struct SearchBar: View {
         )
     }
 }
-struct test: View {
-    var todoItem = ["a","d","f","g"]
-    @State var myCalorie : Float = 0.0
-    @State var myWater : Float = 0.0
-    @State var myFat : Float = 0.0
-    @State var myProtein : Float = 0.0
-    @State var mySaturatedFat : Float = 0.0
-    @State var myCarbohydrates : Float = 0.0
-    @State var myDietaryFiber : Float = 0.0
-    @State var nowElement = 0
-    @State var addTimes = [[Int]]()
-    var starch = Starch.data
-    @State var searchText = ""
-    
-    var body: some View {
-        Text("1")
-        SearchBar(text: $searchText)
-            .padding(.top, -30)
-        List(starch.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) }),id:\.name) { item in
-            Text(item.name)
-        }
-    }
-}
-
-struct test_Previews: PreviewProvider {
+struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        test()
+        SearchBar(text: .constant(""))
     }
 }
 
-*/
+
