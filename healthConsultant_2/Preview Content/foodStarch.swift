@@ -1,22 +1,22 @@
 //
-//  food.swift
+//  foodStarch.swift
 //  healthConsultant_2
 //
-//  Created by CK on 2021/4/14.
+//  Created by CK on 2021/4/29.
 //
 
 import Foundation
 import SwiftUI
 
-struct FoodData :Codable{
-    var fruit:[Fruit]
+struct FoodDataStarch :Codable{
+    var starch:[Starch]
     enum CodingKeys: String, CodingKey {
-          case fruit = "水果"
+          case starch = "starch"
           
        }
 }
 
-struct Fruit :Codable{
+struct Starch :Codable{
     
     let name:String
     let calorie:String
@@ -39,18 +39,19 @@ struct Fruit :Codable{
         case dietaryFiber = "膳食纖維(g)"
        }
     static var data: [Self]{//S
-        var fruit = [Fruit]()
+        var starch = [Starch]()
         if let data = NSDataAsset(name:"food")?.data{
             let decoder = JSONDecoder()
             do{
-                let foodData = try decoder.decode(FoodData.self,from:data)
-                fruit = foodData.fruit
+                let foodData = try decoder.decode(FoodDataStarch.self,from:data)
+                starch = foodData.starch
             }catch{
                 print("error")
             }
             
         }
-        return fruit
+        return starch
         
     }
 }
+

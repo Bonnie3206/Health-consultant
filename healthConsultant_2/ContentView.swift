@@ -14,7 +14,9 @@ func loadData(){
         print(content)
     }
 struct ContentView: View {
+    var fruit = Fruit.data
     @State var SearchPage = false
+    @State var Go_FoodClassifiyViewPage = false
     /*var fruit = Fruit.data
     var body: some View {
         List(fruit, id:\.name){
@@ -35,20 +37,23 @@ struct ContentView: View {
                     .font(.largeTitle)
                 HStack{
                     Button( action: {
-                        SearchPage = true
+                        Go_FoodClassifiyViewPage = true
                         let url = Bundle.main.url(forResource: "data", withExtension: "txt")
                         let content = try! String(contentsOf: url!)
+                                
                                 print(content)}, label: {
                         Text("食材查詢")
                     }).frame(width: 160, height:10)
                         .font(.largeTitle)
-                        .sheet(isPresented: $SearchPage, content:{
-                        SearchView()
+                        .sheet(isPresented: $Go_FoodClassifiyViewPage, content:{
+                           FoodClassifiyView()
                     })
                     Button( action: {
                         let url = Bundle.main.url(forResource: "data", withExtension: "txt")
                         let content = try! String(contentsOf: url!)
-                                print(content)}, label: {
+                                print(content)
+                        
+                    }, label: {
                         Text("蔬菜辨識")
                     }).frame(width: 160, height:10)
                         .font(.largeTitle)

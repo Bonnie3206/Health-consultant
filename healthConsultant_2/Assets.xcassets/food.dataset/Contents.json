@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "data.txt",
-      "idiom" : "universal"
+      "filename" : "data2.txt",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.plain-text"
     }
   ],
   "info" : {

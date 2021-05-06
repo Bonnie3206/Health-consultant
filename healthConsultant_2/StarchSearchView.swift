@@ -1,13 +1,12 @@
 //
-//  SearchView.swift
+//  StarchSearchView.swift
 //  healthConsultant_2
 //
-//  Created by CK on 2021/4/8.
+//  Created by CK on 2021/4/29.
 //
-/*
 import SwiftUI
 
-
+/*
 struct MyFoodData {
     
     static var calorie = 0
@@ -17,9 +16,9 @@ struct MyFoodData {
     var saturatedFat:Float
     var carbohydrates:Float
     var dietaryFiber:Float
-}
+}*/
 
-struct SearchView: View {
+struct StarchSearchView: View {
     
     @State var myCalorie : Float = 0.0
     @State var myWater : Float = 0.0
@@ -53,10 +52,10 @@ struct SearchView: View {
         return(myCalorie,myWater,myFat,myProtein,mySaturatedFat,myCarbohydrates,myDietaryFiber)
     }
  */
-    var fruit = Fruit.data
+    var starch = Starch.data
     var body: some View {
         NavigationView{
-            List(fruit, id:\.name){
+            List(starch, id:\.name){
                 
                 element in
 
@@ -200,9 +199,8 @@ struct SearchView: View {
     
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct StarchSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        StarchSearchView()
     }
 }
-*/

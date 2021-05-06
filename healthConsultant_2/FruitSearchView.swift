@@ -1,10 +1,11 @@
 //
-//  SearchView.swift
+//  FruitSearchView.swift
 //  healthConsultant_2
 //
-//  Created by CK on 2021/4/8.
+//  Created by CK on 2021/4/29.
 //
-/*
+
+import SwiftUI
 import SwiftUI
 
 
@@ -19,7 +20,7 @@ struct MyFoodData {
     var dietaryFiber:Float
 }
 
-struct SearchView: View {
+struct FruitSearchView: View {
     
     @State var myCalorie : Float = 0.0
     @State var myWater : Float = 0.0
@@ -200,9 +201,9 @@ struct SearchView: View {
     
 }
 
-struct SearchView_Previews: PreviewProvider {
+
+struct FruitSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        FruitSearchView()
     }
 }
-*/
