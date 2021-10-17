@@ -17,6 +17,7 @@ struct ContentView: View {
     var fruit = Fruit.data
     @State var SearchPage = false
     @State var Go_FoodClassifiyViewPage = false
+    @State var Go_CameraViewPage = false
     /*var fruit = Fruit.data
     var body: some View {
         List(fruit, id:\.name){
@@ -26,8 +27,15 @@ struct ContentView: View {
         
     var body: some View {
         ZStack{
+            Image("大背景")
+                .resizable()
+                .scaledToFit()
+                .scaleEffect(1.3)
+                .offset(x:0, y: 0)
             Image("背景3")
-                .opacity(0.8)
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .cornerRadius(250)
                 .scaleEffect(1.5)
             VStack{
                 Text("健康飲食諮詢家")
@@ -43,20 +51,30 @@ struct ContentView: View {
                                 
                                 print(content)}, label: {
                         Text("食材查詢")
-                    }).frame(width: 160, height:10)
-                        .font(.largeTitle)
-                        .sheet(isPresented: $Go_FoodClassifiyViewPage, content:{
+                            .padding(7)
+                            .padding(.horizontal, 25)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                            .padding(.horizontal, 10)
+                            .frame(width: 160, height:10)
+
+                    }).sheet(isPresented: $Go_FoodClassifiyViewPage, content:{
                            FoodClassifiyView()
                     })
                     Button( action: {
-                        let url = Bundle.main.url(forResource: "data", withExtension: "txt")
-                        let content = try! String(contentsOf: url!)
-                                print(content)
+                        Go_CameraViewPage = true
                         
                     }, label: {
                         Text("蔬菜辨識")
-                    }).frame(width: 160, height:10)
-                        .font(.largeTitle)
+                            .padding(7)
+                            .padding(.horizontal, 25)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(8)
+                            .padding(.horizontal, 10)
+                            .frame(width: 160, height:10)
+                    }).sheet(isPresented: $Go_CameraViewPage, content:{
+                        CameraView()
+                })
                 }
         }
         }

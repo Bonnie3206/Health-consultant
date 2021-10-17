@@ -72,8 +72,8 @@ struct FoodClassifiyView: View {
             
             
             
-            
         }
+        
     }
 }
 struct FoodClassifiyView_Previews: PreviewProvider {
